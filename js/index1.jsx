@@ -29,7 +29,7 @@ var TodoBox = React.createClass({
     },
     //generate Id
     generateId:function(){
-        return Math.floor(Math.random*9000)+1000;
+        return Math.floor(Math.random()*9000)+1000;
     },
     //add item
     handleSubmit:function(task){
@@ -55,7 +55,7 @@ var TodoBox = React.createClass({
                 todoCount={statistics.todoCount}
                 todoCompleteCount={statistics.todoCompleteCount}
                 />
-                <TodoForm submitTask={this.handleSubmit}/>
+                <TodoForm submitTask={this.handleSubmit} />
             </div>
         )
     }
@@ -80,7 +80,6 @@ var TodoList = React.createClass({
                 todoCompleteCount={this.props.todoCompleteCount} />
             </ul>
         );
-
     }
 });
 var TodoItem = React.createClass({
@@ -111,8 +110,7 @@ var TodoItem = React.createClass({
         return (
             <li className={classes}
             onMouseOver={this.handleMouseOver}
-            onMouseOut={this.handleMouseOut}
-            >
+            onMouseOut={this.handleMouseOut}>
                 <input type="checkbox" className="pull-left" checked={itemchecked} onChange={this.toggleComplete} />
                 {task}
                 <div className="pull-right">
